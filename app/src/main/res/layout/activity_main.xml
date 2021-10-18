@@ -157,7 +157,7 @@
                 android:layout_marginBottom="18dp"
                 app:endIconMode="custom"
                 app:endIconDrawable="@drawable/ic_calendar"
-                app:endIconTint="@color/night_color"
+                app:endIconTint="?colorSecondary"
                 android:hint="Birth date  (dd/mm/yyyy) *">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -220,7 +220,7 @@
 
                 <Button
                     android:id="@+id/check_pin"
-                    android:backgroundTint="@color/night_color"
+                    android:backgroundTint="?colorSecondary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
@@ -278,7 +278,7 @@
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/night_color"
+                android:backgroundTint="?colorSecondary"
                 android:layout_marginBottom="6dp"
                 android:padding="10dp"
                 android:text="Register" />

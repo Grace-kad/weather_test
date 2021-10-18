@@ -52,7 +52,7 @@ public class WeatherWidget extends AppCompatActivity {
     ScrollView scrollView;
 
     //widget views
-    TextView tempC, tempF, tempDesc, cityName, lon, lat;
+    TextView tempC, tempF, tempDesc, cityName, lon, lat, userName;
 
     //input text view and input text layout to get the search icon
     TextInputLayout searchLayout;
@@ -84,6 +84,8 @@ public class WeatherWidget extends AppCompatActivity {
         tempDesc.setSelected(true);
         lon = findViewById(R.id.longitude);
         lat = findViewById(R.id.latitude);
+        userName = findViewById(R.id.user_name);
+        userName.setSelected(true);
 
         searchLayout = findViewById(R.id.city_search_layout);
         citySearch = findViewById(R.id.city_seach);
@@ -99,7 +101,7 @@ public class WeatherWidget extends AppCompatActivity {
 
 
         String name = getSharedPreferences(MainActivity.PREFERENCE_NAME,MODE_PRIVATE).getString("name","");
-        Toast.makeText(getApplicationContext(),"Hello " + name,Toast.LENGTH_LONG).show();
+        userName.setText(name);
 
         //handle search icon click that triggers the search
         searchLayout.setEndIconOnClickListener(new View.OnClickListener() {

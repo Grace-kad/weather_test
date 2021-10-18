@@ -7,13 +7,32 @@
     tools:context=".WeatherWidget">
 
     <Button
+        android:id="@+id/user_name"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="8dp"
+        android:textAllCaps="false"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:text="Hi"
+        android:textColor="?colorSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/city_search_layout" />
+
+    <Button
         android:id="@+id/log_out_btn"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="sign out"
-        android:textColor="@color/night_color"
+        android:textColor="?colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/city_search_layout" />
 
@@ -28,7 +47,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:endIconMode="custom"
         app:endIconDrawable="@drawable/ic_search"
-        app:endIconTint="@color/night_color"
+        app:endIconTint="?colorSecondary"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="100dp">
 
