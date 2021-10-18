@@ -133,8 +133,9 @@ public class WeatherWidget extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences preferences = getPreferences(MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
+                editor.remove("registered");
                 editor.putBoolean("registered",false);
-                editor.apply();
+                editor.commit();
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
             }
