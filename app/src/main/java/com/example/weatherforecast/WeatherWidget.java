@@ -131,9 +131,8 @@ public class WeatherWidget extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+                SharedPreferences preferences = getSharedPreferences(MainActivity.PREFERENCE_NAME,MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.remove("registered");
                 editor.putBoolean("registered",false);
                 editor.commit();
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);

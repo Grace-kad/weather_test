@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup gender;
     Button checkPin, register;
 
+    //shared preference name
+    static public String PREFERENCE_NAME = "USER_DATA";
 
     TextView errorMsg, pinErrMsg;
 
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(getPreferences(MODE_PRIVATE).getBoolean("registered",false)){
+        if(getSharedPreferences(PREFERENCE_NAME,MODE_PRIVATE).getBoolean("registered",false)){
             Intent intent = new Intent(getApplicationContext(), WeatherWidget.class);
             startActivity(intent);
         }
@@ -242,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //shared preference to save data
-                SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME,MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 if(!TextUtils.isEmpty(phone.getText())){
