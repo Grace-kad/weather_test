@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="(*) Required"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="18dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -70,13 +70,13 @@
                 android:textColor="@color/red"
                 android:text="(*) Required"
                 android:visibility="gone"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="18dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:hint="Mobile Number *"
                 app:prefixText="+91 ">
 
@@ -93,7 +93,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:hint="Full Name *">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -108,7 +108,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:background="@drawable/gender_bg"
                 android:padding="6dp"
                 android:orientation="horizontal">
@@ -154,7 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/birth_date_layout"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 app:endIconMode="custom"
                 app:endIconDrawable="@drawable/ic_calendar"
                 app:endIconTint="@color/night_color"
@@ -172,7 +172,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:hint="Address Line 1 *">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -186,7 +186,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:hint="Address Line 2(Optional)">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -199,7 +199,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -244,7 +244,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:enabled="false"
                 android:hint="District *">
 
@@ -261,7 +261,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="18dp"
                 android:enabled="false"
                 android:hint="State *">
 
@@ -279,7 +279,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/night_color"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="6dp"
                 android:padding="10dp"
                 android:text="Register" />
 

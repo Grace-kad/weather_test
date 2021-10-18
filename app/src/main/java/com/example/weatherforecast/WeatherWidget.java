@@ -6,6 +6,8 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
@@ -19,6 +21,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.util.Xml;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -54,6 +57,7 @@ public class WeatherWidget extends AppCompatActivity {
     //input text view and input text layout to get the search icon
     TextInputLayout searchLayout;
     TextInputEditText citySearch;
+    Button logout;
 
     //retrofit and api service
     Retrofit retrofit;
@@ -83,6 +87,7 @@ public class WeatherWidget extends AppCompatActivity {
 
         searchLayout = findViewById(R.id.city_search_layout);
         citySearch = findViewById(R.id.city_seach);
+        logout = findViewById(R.id.log_out_btn);
 
         //initialize retrofit
         retrofit = new Retrofit.Builder()
@@ -117,6 +122,18 @@ public class WeatherWidget extends AppCompatActivity {
 
 
                 }
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("registered",false);
+                editor.apply();
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
             }
         });
 
