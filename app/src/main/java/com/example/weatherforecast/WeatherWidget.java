@@ -87,6 +87,7 @@ public class WeatherWidget extends AppCompatActivity {
 
         searchLayout = findViewById(R.id.city_search_layout);
         citySearch = findViewById(R.id.city_seach);
+        citySearch.requestFocus();
         logout = findViewById(R.id.log_out_btn);
 
         //initialize retrofit
@@ -142,6 +143,12 @@ public class WeatherWidget extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        finishAffinity();
+    }
+
     //runnable for network task
 
     Runnable networkOperation = new Runnable() {
@@ -150,7 +157,7 @@ public class WeatherWidget extends AppCompatActivity {
 
             String city = citySearch.getText().toString();
             String units = "metric";
-            //to hide=========================================================================
+            //api key to be hidden=========================================================================
             String appId = "4cfd1abbb2d765fdfecacf7165c49759";
             Call<WeatherInfo> weatherCall = apiService.getWeatherInfo(city,units,appId);
 

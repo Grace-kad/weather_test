@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(getSharedPreferences(PREFERENCE_NAME,MODE_PRIVATE).getBoolean("registered",false)){
             Intent intent = new Intent(getApplicationContext(), WeatherWidget.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
 
@@ -344,6 +345,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putBoolean("registered",true);
                     editor.apply();
                     Intent intent = new Intent(getApplicationContext(), WeatherWidget.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }else{
                     errorMsg.setText(errors);
