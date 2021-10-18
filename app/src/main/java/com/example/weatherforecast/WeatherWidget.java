@@ -97,6 +97,9 @@ public class WeatherWidget extends AppCompatActivity {
         apiService = retrofit.create(WeatherInfoService.class);
 
 
+        String name = getPreferences(MODE_PRIVATE).getString("name","");
+        Toast.makeText(getApplicationContext(),"Hello " + name,Toast.LENGTH_LONG).show();
+
         //handle search icon click that triggers the search
         searchLayout.setEndIconOnClickListener(new View.OnClickListener() {
             @Override
