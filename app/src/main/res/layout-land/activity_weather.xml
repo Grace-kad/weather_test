@@ -20,7 +20,7 @@
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:text="Hi"
+        android:text="Hello"
         android:textColor="?colorSecondary"
         app:layout_constraintStart_toStartOf="@+id/city_search_layout"
         app:layout_constraintTop_toTopOf="parent" />
