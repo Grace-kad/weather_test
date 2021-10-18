@@ -97,7 +97,7 @@ public class WeatherWidget extends AppCompatActivity {
         apiService = retrofit.create(WeatherInfoService.class);
 
 
-        String name = getPreferences(MODE_PRIVATE).getString("name","");
+        String name = getSharedPreferences(MainActivity.PREFERENCE_NAME,MODE_PRIVATE).getString("name","");
         Toast.makeText(getApplicationContext(),"Hello " + name,Toast.LENGTH_LONG).show();
 
         //handle search icon click that triggers the search
@@ -134,7 +134,7 @@ public class WeatherWidget extends AppCompatActivity {
                 SharedPreferences preferences = getSharedPreferences(MainActivity.PREFERENCE_NAME,MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putBoolean("registered",false);
-                editor.commit();
+                editor.apply();
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
             }
