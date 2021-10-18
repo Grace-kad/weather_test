@@ -251,7 +251,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Haryana"
+                    android:text=""
                     android:id="@+id/district"
                     android:textSize="16sp"
                     android:textColor="#808080" />
@@ -268,7 +268,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/state"
-                    android:text="Faridabad"
+                    android:text=""
                     android:textSize="16sp"
                     android:textColor="#808080"
                     android:layout_height="wrap_content" />
