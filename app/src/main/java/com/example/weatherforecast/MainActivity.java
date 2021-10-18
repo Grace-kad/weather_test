@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -85,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(getPreferences(MODE_PRIVATE).getBoolean("registered",false)){
+            Intent intent = new Intent(getApplicationContext(), WeatherWidget.class);
+            startActivity(intent);
+        }
+
         setContentView(R.layout.activity_main);
 
 
@@ -233,8 +240,14 @@ public class MainActivity extends AppCompatActivity {
                 String f_name, f_phone, f_dob, f_gender, f_pin, f_state, f_district, f_addr1, f_addr2, errors = "";
                 Boolean flag = true;
 
+
+                //shared preference to save data
+                SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
                 if(!TextUtils.isEmpty(phone.getText())){
                     f_phone = phone.getText().toString();
+                    editor.putString("phone",f_phone);
                 }
                 else{
                     errors += "Phone is required \n";
@@ -244,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(name.getText())){
                     f_name = name.getText().toString();
+                    editor.putString("name",f_name);
                 }
                 else{
                     errors += "Name is required \n";
@@ -254,6 +268,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(birthDate.getText())){
                     f_dob = birthDate.getText().toString();
+                    editor.putString("birthDate",f_dob);
                 }
                 else{
                     errors += "Birth date is required \n";
@@ -264,8 +279,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if(male.isChecked()){
                     f_gender = "male";
+                    editor.putString("gender",f_gender);
                 }else if(female.isChecked()){
                     f_gender = "female";
+                    editor.putString("gender",f_gender);
                 }else if(!male.isChecked() && !female.isChecked()){
                     errors += "Gender is required";
                     flag = false;
@@ -273,6 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(addr1.getText())){
                     f_addr1= addr1.getText().toString();
+                    editor.putString("addressLine1",f_addr1);
                 }
                 else{
                     errors += "Address is required \n";
@@ -282,11 +300,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(addr2.getText())){
                     f_addr2= addr2.getText().toString();
+                    editor.putString("addressLine2",f_addr2);
                 }
 
 
                 if(!TextUtils.isEmpty(pin.getText())){
                     f_pin= pin.getText().toString();
+                    editor.putString("pinCode",f_pin);
                 }
                 else{
                     errors += "Pin code is required \n";
@@ -297,6 +317,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(district.getText())){
                     f_district= district.getText().toString();
+                    editor.putString("district",f_district);
                 }
                 else{
                     errors += "District is required \n";
@@ -306,7 +327,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if(!TextUtils.isEmpty(state.getText())){
-                    f_pin= state.getText().toString();
+                    f_state = state.getText().toString();
+                    editor.putString("state",f_state);
                 }
                 else{
                     errors += "State is required \n";
@@ -317,6 +339,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if(flag){
                     errorMsg.setVisibility(View.GONE);
+                    editor.putBoolean("registered",true);
+                    editor.apply();
                     Intent intent = new Intent(getApplicationContext(), WeatherWidget.class);
                     startActivity(intent);
                 }else{
